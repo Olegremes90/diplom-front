@@ -1,0 +1,57 @@
+.container-machine-add{
+    margin-left: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+
+    background-color: #163E6C;
+    border-radius: 7px;
+    text-align: center;
+    color: #EBE6D6;
+    font-family: 'Astra', sans-serif;
+    line-height: 2.2;
+}
+input{
+    height: 25px;
+    border-radius: 7px;
+    border: none;
+    width: 70%;
+}
+.select-add{
+    width: 71%;
+    height: 30px;
+}
+.button-add-machine{
+    padding: 10px 160px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 40px;
+    background-color: #D20A11;
+    color: #EBE6D6;
+    font-family: 'Astra', sans-serif;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.button-add-machine-complaint{
+    padding: 10px 140px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 10px;
+    background-color: #D20A11;
+    color: #EBE6D6;
+    font-family: 'Astra', sans-serif;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+.button-add-machine-to{
+    padding: 10px 190px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 40px;
+    background-color: #D20A11;
+    color: #EBE6D6;
+    font-family: 'Astra', sans-serif;
+    margin-bottom: 40px;
+    cursor: pointer;
+}

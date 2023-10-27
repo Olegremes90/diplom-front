@@ -1,0 +1,43 @@
+.forma-login{
+    border: 2px solid;
+    width: 30%;
+    height: 320px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 35%;
+    border-radius: 10px;
+    text-align: center;
+    background-color:  #163E6C;
+    color:   #EBE6D6;
+    font-family: 'Astra';
+}
+.username{
+    width: 85%;
+    height: 20px;
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+    font-family: 'Astra', sans-serif;
+}
+
+.button-login{
+    padding: 8px 150px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: cadetblue;
+    font-family: 'Astra', sans-serif;
+    cursor: pointer;
+}
+.button-login:disabled{
+    cursor: no-drop;
+}
+.container-content{
+    padding-bottom: -60px;
+}
+.error{
+    font-family: 'Astra-regular', sans-serif;
+    color: red;
+    font-size: small;
+    padding-bottom: 15px;
+}

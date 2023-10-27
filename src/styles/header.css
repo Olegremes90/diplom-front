@@ -1,0 +1,62 @@
+.container-header{
+     height: 80px;
+    display: flex;
+     vertical-align: center;
+     justify-content: space-between;
+    background-color: cadetblue;
+}
+ .head-1 {
+     text-align: center;
+
+    margin-top: auto;
+     margin-bottom: auto;
+     text-align: center;
+     width: 25%
+ }
+ .head-2 {
+     margin-top: auto;
+     margin-bottom: auto;
+   display: flex;
+     justify-content: flex-end;
+
+ }
+ .head-3{
+     margin-top: auto;
+     margin-bottom: auto;
+
+ }
+.logo-container {
+    width: 33%;
+
+}
+.button-login-1{
+    margin-right: 10px;
+    padding: 5px 20px;
+    background-color:  #D20A11;
+    border: none;
+    border-radius: 7px;
+    color: wheat;
+    font-family: 'Astra', sans-serif;
+    cursor: pointer;
+
+}
+.button-login-1:hover{
+    background-color: #163E6C;
+}
+.phone{
+    color: wheat;
+    font-family: 'Astra', sans-serif;
+}
+
+.container{
+      height: 80px;
+}
+
+.text-silant{
+    background-color:  cadetblue;
+    margin:0;
+    text-align: center;
+     color: wheat;
+    font-family: 'Astra', sans-serif;
+    padding-bottom: 20px;
+}

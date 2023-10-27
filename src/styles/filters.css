@@ -1,0 +1,57 @@
+.filter-to{
+
+    padding-top: 13px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.container-filter{
+    width: 80%;
+     height: 50px;
+    background-color: #163E6C;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+select{
+    border-radius: 7px;
+    height: 25px;
+    background-color: #EBE6D6;
+    font-family: 'Astra', sans-serif;
+}
+.filter-button{
+    background-color: #163E6C;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Astra', sans-serif;
+    color: #EBE6D6;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+.filter-button-to{
+    background-color: #D20A11;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Astra', sans-serif;
+    color: #EBE6D6;
+
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+.container-button-filter{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.number-machine{
+    font-family: 'Astra', sans-serif;
+
+}
