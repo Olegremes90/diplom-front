@@ -24,7 +24,7 @@ const Authorized = () => {
                 'Accept': 'application/json',
                  'Authorization': `Token  ${localStorage.getItem('access_Token')}`
             }
-            const getMachine = await axios.get(`http://127.0.0.1:8000//machine-list`, {headers})
+            const getMachine = await axios.get(`http://127.0.0.1:8000/api/machine-list`, {headers})
                 .then((resp) => {
                     console.log(resp)
                     return resp
@@ -45,7 +45,7 @@ const Authorized = () => {
             'Accept': 'application/json',
              'Authorization': `Token  ${localStorage.getItem('access_Token')}`
         }
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error

@@ -16,7 +16,7 @@ const FilterTO = ({ChangeTO, machine, HandleChange, getTO}) => {
             }
     useEffect(()=>{
         const getData = async()=>{
-        const getMachine = await axios.get('http://127.0.0.1:8000//todo/', {headers})
+        const getMachine = await axios.get('http://127.0.0.1:8000/api/todo/', {headers})
             .then((resp) => {
                 console.log(resp)
             return resp
@@ -28,7 +28,7 @@ const FilterTO = ({ChangeTO, machine, HandleChange, getTO}) => {
         }
         getData()
            const getServiceList= async ()=>{
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -41,7 +41,7 @@ const FilterTO = ({ChangeTO, machine, HandleChange, getTO}) => {
     }
     getServiceList()
            const getVidiTOList= async ()=>{
-        const get_vidi = await axios.get('http://127.0.0.1:8000//vidi/', {headers} ).
+        const get_vidi = await axios.get('http://127.0.0.1:8000/api/vidi/', {headers} ).
             then((result)=>{
 
                  return result.data.Vidi_TO
@@ -65,7 +65,7 @@ const FilterTO = ({ChangeTO, machine, HandleChange, getTO}) => {
             }
             for (const item of machine.data) {
 
-                    array.push(await axios.get(`http://127.0.0.1:8000//todo/${item.id}?${filterUrl(number_machine, 'machine')}&${filterUrl(kindTO, 'vid_to')}&${filterUrl(company, 'company')}`, {headers}).then((result) => {
+                    array.push(await axios.get(`http://127.0.0.1:8000/api/todo/${item.id}?${filterUrl(number_machine, 'machine')}&${filterUrl(kindTO, 'vid_to')}&${filterUrl(company, 'company')}`, {headers}).then((result) => {
                         console.log(result)
                         return {'arr':result.data, 'number': item.number}
 

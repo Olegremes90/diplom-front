@@ -25,7 +25,7 @@ const Filter = ({ChangeData, getData}) => {
      useEffect(()=>{
            const getServiceList= async ()=>{
 
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -38,7 +38,7 @@ const Filter = ({ChangeData, getData}) => {
     }
     getServiceList()
         const getLead = async()=>{
-        const lead_list = await axios.get('http://127.0.0.1:8000//lead/', {headers}).
+        const lead_list = await axios.get('http://127.0.0.1:8000/api/lead/', {headers}).
             then((result)=>{
                 return result.data.Lead
         }).catch((error)=>{
@@ -49,7 +49,7 @@ const Filter = ({ChangeData, getData}) => {
     getLead()
         const getTechnic = async()=>{
 
-            const technic_list = await axios.get('http://127.0.0.1:8000//technica/', {headers}).
+            const technic_list = await axios.get('http://127.0.0.1:8000/api/technica/', {headers}).
                 then((result)=>{
                     console.log( result.data.Technic)
                     return result.data.Technic
@@ -61,7 +61,7 @@ const Filter = ({ChangeData, getData}) => {
         getTechnic()
         const getTransmisia = async()=>{
 
-            const transmisia_list = await axios.get('http://127.0.0.1:8000//transmisia/', {headers}).
+            const transmisia_list = await axios.get('http://127.0.0.1:8000/api/transmisia/', {headers}).
                 then((result)=>{
                     return result.data.Transmisia
             }).catch((error)=>{
@@ -72,7 +72,7 @@ const Filter = ({ChangeData, getData}) => {
         getTransmisia()
         const getClients = async()=>{
 
-            const client_list = await axios.get('http://127.0.0.1:8000//client/', {headers}).
+            const client_list = await axios.get('http://127.0.0.1:8000/api/client/', {headers}).
                 then((response)=>{
                     return response.data.Clients
             }).catch((error)=>{
@@ -83,7 +83,7 @@ const Filter = ({ChangeData, getData}) => {
         getClients()
         const getBridge = async()=>{
 
-            const bridge_list = await axios.get('http://127.0.0.1:8000//steerablebridge/', {headers}).
+            const bridge_list = await axios.get('http://127.0.0.1:8000/api/steerablebridge/', {headers}).
                 then((response)=>{
                     return response.data.Steerable_bridge
             }).catch((error)=>{
@@ -94,7 +94,7 @@ const Filter = ({ChangeData, getData}) => {
         getBridge()
         const getEngine = async()=>{
                const headers = Headers
-            const engine_list = await axios.get('http://127.0.0.1:8000//engine/', {headers}).
+            const engine_list = await axios.get('http://127.0.0.1:8000/api/engine/', {headers}).
                 then((response)=>{
                     return response.data.Engine
             }).catch((error)=>{
@@ -114,7 +114,7 @@ const Filter = ({ChangeData, getData}) => {
     }
 
     const FilterMachine= async()=>{
-         const filter_data = await axios.get(`http://127.0.0.1:8000//machine-list?${filterUrl(company, 'number')}&${filterUrl(model_transmisia, 'transmisia')}&${filterUrl(model_engine, 'engine')}&${filterUrl(model_technic, 'technic')}&${filterUrl(model_lead, 'lead')}&${filterUrl(steerable, 'steerable_bridge')}`, {headers}).then((response)=>{
+         const filter_data = await axios.get(`http://127.0.0.1:8000/api/machine-list?${filterUrl(company, 'number')}&${filterUrl(model_transmisia, 'transmisia')}&${filterUrl(model_engine, 'engine')}&${filterUrl(model_technic, 'technic')}&${filterUrl(model_lead, 'lead')}&${filterUrl(steerable, 'steerable_bridge')}`, {headers}).then((response)=>{
              console.log(response)
             return response
          }).catch((error)=>{

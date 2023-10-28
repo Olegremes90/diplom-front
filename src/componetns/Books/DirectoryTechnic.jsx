@@ -20,7 +20,7 @@ const DirectoryTechnic = () => {
     useEffect(()=>{
          const getTechnic = async()=>{
 
-            const technic_list = await axios.get(`http://127.0.0.1:8000//technica-detail/${params.title}/`, {headers}).
+            const technic_list = await axios.get(`http://127.0.0.1:8000/api/technica-detail/${params.title}/`, {headers}).
                 then((result)=>{
                     console.log( result.data)
                     return result.data
@@ -32,7 +32,7 @@ const DirectoryTechnic = () => {
         getTechnic()
          const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
@@ -48,7 +48,7 @@ const DirectoryTechnic = () => {
             'title': title,
             'descrip': description
         }
-        axios.post(`http://127.0.0.1:8000//technic/add/`, state, {headers}).then((result)=>{
+        axios.post(`http://127.0.0.1:8000/api/technic/add/`, state, {headers}).then((result)=>{
             console.log(result)
              setMessage('Данные в справочник успешно добавлены!')
         }).catch((error)=>{  setMessage('Упс, что-то пошло не так, повторите попытку.')})
@@ -59,7 +59,7 @@ const DirectoryTechnic = () => {
               'title': title_1,
             'descrip': description_1
         }
-         const serv = await axios.patch(`http://127.0.0.1:8000//update-technica/${technic[0].id}`, state, {headers}).then((result)=>{
+         const serv = await axios.patch(`http://127.0.0.1:8000/api/update-technica/${technic[0].id}`, state, {headers}).then((result)=>{
             setMessage('Данные в справочнике модели техники успешно изменены!')
             return  [result.data]
         }).catch((error)=>{

@@ -23,7 +23,7 @@ const UpdateTO = () => {
      const params = useParams()
     useEffect(()=>{
              const getData = async()=>{
-        const getMachine = await axios.get('http://127.0.0.1:8000//todo/', {headers})
+        const getMachine = await axios.get('http://127.0.0.1:8000/api/todo/', {headers})
             .then((resp) => {
                 console.log(resp)
             return resp
@@ -36,7 +36,7 @@ const UpdateTO = () => {
         getData()
            const getServiceList= async ()=>{
 
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -50,7 +50,7 @@ const UpdateTO = () => {
     getServiceList()
            const getVidiTOList= async ()=>{
         const headers = Headers
-        const get_vidi = await axios.get('http://127.0.0.1:8000//vidi/', {headers} ).
+        const get_vidi = await axios.get('http://127.0.0.1:8000/api/vidi/', {headers} ).
             then((result)=>{
 
                  return result.data.Vidi_TO
@@ -75,7 +75,7 @@ const UpdateTO = () => {
             'data_zakaza': dateZakaza,
                 'car': number_machine
         }
-        axios.patch(`http://127.0.0.1:8000//TO/${params.id}`, state, {headers}).then((response)=>{
+        axios.patch(`http://127.0.0.1:8000/api/TO/${params.id}`, state, {headers}).then((response)=>{
             console.log(response.data)
             setResult(response.data)
         }).catch((error)=>{

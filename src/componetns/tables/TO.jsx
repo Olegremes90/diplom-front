@@ -22,7 +22,7 @@ const TO = (data,headers) => {
                 'Authorization': `Token  ${localStorage.getItem('access_Token')}`
             }
             for (const item of machine.data) {
-                    array.push(await axios.post('http://127.0.0.1:8000//TO/', item.id, {headers}).then((result) => {
+                    array.push(await axios.post('http://127.0.0.1:8000/api/TO/', item.id, {headers}).then((result) => {
                         return {'arr':result.data.TO, 'number': item.number}
 
                     }).catch((error)=>{

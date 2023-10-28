@@ -22,7 +22,7 @@ const DirectoryRecovery = () => {
     useEffect(()=>{
         const getRecovery = async()=>{
 
-        const lead_list = await axios.get(`http://127.0.0.1:8000//recovery-detail/${params.title}`, {headers}).
+        const lead_list = await axios.get(`http://127.0.0.1:8000/api/recovery-detail/${params.title}`, {headers}).
             then((result)=>{
                 console.log(result.data)
                 return result.data
@@ -34,7 +34,7 @@ const DirectoryRecovery = () => {
     getRecovery()
          const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
@@ -50,7 +50,7 @@ const DirectoryRecovery = () => {
             'title': title,
             'descrip': description
         }
-        axios.post(`http://127.0.0.1:8000//recovery/add/`, state, {headers}).then((result)=>{
+        axios.post(`http://127.0.0.1:8000/api/recovery/add/`, state, {headers}).then((result)=>{
             console.log(result)
               setMessage('В справочник способы восстановления были успешно добавлены данные!')
         }).catch((error)=>{setMessage('Упс, что-то пошло не так, повторите попытку.')})
@@ -61,7 +61,7 @@ const DirectoryRecovery = () => {
               'title': title_1,
             'descrip': description_1
         }
-         const serv = await axios.patch(`http://127.0.0.1:8000//update-recovery/${recovery[0].id}`, state, {headers}).then((result)=>{
+         const serv = await axios.patch(`http:/api/127.0.0.1:8000/api/update-recovery/${recovery[0].id}`, state, {headers}).then((result)=>{
             setMessage('В справочнике способы восстановления были успешно изменены данные!')
             return  [result.data]
         }).catch((error)=>{

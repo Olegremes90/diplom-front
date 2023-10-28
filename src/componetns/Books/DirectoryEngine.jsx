@@ -20,7 +20,7 @@ const DirectoryEngine = () => {
     useEffect(()=>{
          const getEngine = async()=>{
 
-            const engine_list = await axios.get(`http://127.0.0.1:8000//engine-detail/${params.title}/`, {headers}).
+            const engine_list = await axios.get(`http:/api/127.0.0.1:8000//engine-detail/${params.title}/`, {headers}).
                 then((response)=>{
                     return response.data
             }).catch((error)=>{
@@ -31,7 +31,7 @@ const DirectoryEngine = () => {
         getEngine()
         const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http:/api/127.0.0.1:8000//group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
@@ -48,7 +48,7 @@ const DirectoryEngine = () => {
             'title': title,
             'descrip': description
         }
-        axios.post(`http://127.0.0.1:8000//engine/add/`, state, {headers}).then((result)=>{
+        axios.post(`http://127.0.0.1:8000/api/engine/add/`, state, {headers}).then((result)=>{
             console.log(result)
              setMessage('Данные в справочник модели двигателя успешно добавлены!')
         }).catch((error)=>{ setMessage('Упс, что-то пошло не так, повторите попытку.')})
@@ -59,7 +59,7 @@ const DirectoryEngine = () => {
               'title': title_1,
             'descrip': description_1
         }
-         const serv = await axios.patch(`http://127.0.0.1:8000//update-engine/${engine[0].id}`, state, {headers}).then((result)=>{
+         const serv = await axios.patch(`http://127.0.0.1:8000/api/update-engine/${engine[0].id}`, state, {headers}).then((result)=>{
              setMessage('Данные в справочнике модели двигателя успешно изменены!')
             return  [result.data]
         }).catch((error)=>{

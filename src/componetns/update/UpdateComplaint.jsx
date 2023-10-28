@@ -31,7 +31,7 @@ const UpdateComplaint = () => {
             }
     useEffect(()=>{
           const getData = async()=>{
-        const getMachine = await axios.get('http://127.0.0.1:8000//todo/', {headers})
+        const getMachine = await axios.get('http://127.0.0.1:8000/api/todo/', {headers})
             .then((resp) => {
                 console.log(resp)
             return resp
@@ -44,7 +44,7 @@ const UpdateComplaint = () => {
         getData()
         const getServiceList= async ()=>{
         const headers = Headers
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -58,7 +58,7 @@ const UpdateComplaint = () => {
     getServiceList()
         const getUselList= async ()=>{
         const headers = Headers
-        const get_usels = await axios.get('http://127.0.0.1:8000//usel/', {headers} ).
+        const get_usels = await axios.get('http://127.0.0.1:8000/api/usel/', {headers} ).
             then((result)=>{
                     console.log(result.data.Usels)
                  return result.data.Usels
@@ -71,7 +71,7 @@ const UpdateComplaint = () => {
     getUselList()
         const getrecoveryList = async () =>{
             const headers = Headers
-            const get_recovery = await axios.get('http://127.0.0.1:8000//recovery/', {headers}).
+            const get_recovery = await axios.get('http://127.0.0.1:8000/api/recovery/', {headers}).
                 then((response)=>{
                     console.log(response)
                     return response.data.Recovery
@@ -97,7 +97,7 @@ const UpdateComplaint = () => {
             'car_complaint': number_machine,
             'service_org': company,
         }
-        axios.patch(`http://127.0.0.1:8000//complaint/${params.id}`, state, {headers}).then((result)=>{
+        axios.patch(`http://127.0.0.1:8000/api/complaint/${params.id}`, state, {headers}).then((result)=>{
             console.log(result.data.car_title)
             setTitle(result.data.car_title)
         }).catch((error)=>{

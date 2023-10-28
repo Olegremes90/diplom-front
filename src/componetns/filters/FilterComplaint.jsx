@@ -17,7 +17,7 @@ const FilterComplaint = ({HandleChange, machine, getTO}) => {
         async function getСomplaints(){
         const array = []
             for (const item of machine.data) {
-                    array.push(await axios.get(`http://127.0.0.1:8000//complaint-filter/${item.id}?${filterUrl(company, 'service')}&${filterUrl(uselValue, 'usel')}&${filterUrl(methods, 'recovery')}`, {headers}).then((result) => {
+                    array.push(await axios.get(`http://127.0.0.1:8000/api/complaint-filter/${item.id}?${filterUrl(company, 'service')}&${filterUrl(uselValue, 'usel')}&${filterUrl(methods, 'recovery')}`, {headers}).then((result) => {
                         return {'arr': result.data, 'number': item.number}
 
                     }).catch((error)=>{
@@ -38,7 +38,7 @@ const FilterComplaint = ({HandleChange, machine, getTO}) => {
     useEffect(()=>{
      const getServiceList= async ()=>{
 
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -52,7 +52,7 @@ const FilterComplaint = ({HandleChange, machine, getTO}) => {
     getServiceList()
         const getUselList= async ()=>{
 
-        const get_usels = await axios.get('http://127.0.0.1:8000//usel/', {headers} ).
+        const get_usels = await axios.get('http://127.0.0.1:8000/api/usel/', {headers} ).
             then((result)=>{
                     console.log(result.data.Usels)
                  return result.data.Usels
@@ -65,7 +65,7 @@ const FilterComplaint = ({HandleChange, machine, getTO}) => {
     getUselList()
         const getrecoveryList = async () =>{
 
-            const get_recovery = await axios.get('http://127.0.0.1:8000//recovery/', {headers}).
+            const get_recovery = await axios.get('http://127.0.0.1:8000/api/recovery/', {headers}).
                 then((response)=>{
                     console.log(response)
                     return response.data.Recovery

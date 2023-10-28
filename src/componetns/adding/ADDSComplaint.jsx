@@ -30,7 +30,7 @@ const ADDSComplaint = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const getMachine = await axios.get('http://127.0.0.1:8000//todo/', {headers})
+            const getMachine = await axios.get('http://127.0.0.1:8000/api/todo/', {headers})
                 .then((resp) => {
                     console.log(resp)
                     return resp
@@ -43,7 +43,7 @@ const ADDSComplaint = () => {
         }
         getData()
         const getServiceList = async () => {
-            const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers}).then((result) => {
+            const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers}).then((result) => {
                 console.log(result)
                 return result.data.Service
 
@@ -56,7 +56,7 @@ const ADDSComplaint = () => {
         getServiceList()
         const getUselList = async () => {
 
-            const get_usels = await axios.get('http://127.0.0.1:8000//usel/', {headers}).then((result) => {
+            const get_usels = await axios.get('http://127.0.0.1:8000/api/usel/', {headers}).then((result) => {
                 console.log(result.data.Usels)
                 return result.data.Usels
 
@@ -68,7 +68,7 @@ const ADDSComplaint = () => {
         getUselList()
         const getrecoveryList = async () => {
 
-            const get_recovery = await axios.get('http://127.0.0.1:8000//recovery/', {headers}).then((response) => {
+            const get_recovery = await axios.get('http://127.0.0.1:8000/api/recovery/', {headers}).then((response) => {
                 console.log(response)
                 return response.data.Recovery
             }).catch((error) => {
@@ -93,7 +93,7 @@ const ADDSComplaint = () => {
             'car_complaint': number_machine,
             'service_org': company,
         }
-        axios.post('http://127.0.0.1:8000//complaint/add/', state, {headers}).then((result) => {
+        axios.post('http://127.0.0.1:8000/api/complaint/add/', state, {headers}).then((result) => {
             setMessage('Рекламация была успешно добавлена')
         }).catch((error) => {
             setMessage('Упс что-то пошло не так, повторите попытку.')

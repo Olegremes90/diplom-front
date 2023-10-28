@@ -21,7 +21,7 @@ const AddTO = () => {
             }
     useEffect(()=>{
         const getData = async()=>{
-        const getMachine = await axios.get('http://127.0.0.1:8000//todo/', {headers})
+        const getMachine = await axios.get('http://127.0.0.1:8000/apiv/todo/', {headers})
             .then((resp) => {
                 console.log(resp)
             return resp
@@ -33,7 +33,7 @@ const AddTO = () => {
         }
         getData()
            const getServiceList= async ()=>{
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -46,7 +46,7 @@ const AddTO = () => {
     }
     getServiceList()
            const getVidiTOList= async ()=>{
-        const get_vidi = await axios.get('http://127.0.0.1:8000//vidi/', {headers} ).
+        const get_vidi = await axios.get('http://127.0.0.1:8000/api/vidi/', {headers} ).
             then((result)=>{
 
                  return result.data.Vidi_TO
@@ -72,7 +72,7 @@ const AddTO = () => {
          'data_to': date_to,
             'data_zakaza': dateZakaza
         }
-        axios.post('http://127.0.0.1:8000//to/add/', state, {headers}).then((response)=>{
+        axios.post('http://127.0.0.1:8000/api/to/add/', state, {headers}).then((response)=>{
            setMessage('Новое ТО было успешно добавлено!')
         }).catch((error)=>{
             setMessage('Упс что-то пошло не так, повторите попытку.')

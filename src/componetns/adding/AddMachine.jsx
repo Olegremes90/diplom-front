@@ -34,7 +34,7 @@ const AddMachine = ({Headers}) => {
     useEffect(()=>{
            const getServiceList= async ()=>{
         const headers = Headers
-        const get_serrvice = await axios.get('http://127.0.0.1:8000//service/', {headers} ).
+        const get_serrvice = await axios.get('http://127.0.0.1:8000/api/service/', {headers} ).
             then((result)=>{
                 console.log(result)
                return result.data.Service
@@ -48,7 +48,7 @@ const AddMachine = ({Headers}) => {
     getServiceList()
         const getLead = async()=>{
                const headers=Headers
-        const lead_list = await axios.get('http://127.0.0.1:8000//lead/', {headers}).
+        const lead_list = await axios.get('http://127.0.0.1:8000/api/lead/', {headers}).
             then((result)=>{
                 return result.data.Lead
         }).catch((error)=>{
@@ -59,7 +59,7 @@ const AddMachine = ({Headers}) => {
     getLead()
         const getTechnic = async()=>{
                const headers = Headers
-            const technic_list = await axios.get('http://127.0.0.1:8000//technica/', {headers}).
+            const technic_list = await axios.get('http://127.0.0.1:8000/api/technica/', {headers}).
                 then((result)=>{
                     console.log( result.data.Technic)
                     return result.data.Technic
@@ -71,7 +71,7 @@ const AddMachine = ({Headers}) => {
         getTechnic()
         const getTransmisia = async()=>{
                const headers = Headers
-            const transmisia_list = await axios.get('http://127.0.0.1:8000//transmisia/', {headers}).
+            const transmisia_list = await axios.get('http://127.0.0.1:8000/api/transmisia/', {headers}).
                 then((result)=>{
                     return result.data.Transmisia
             }).catch((error)=>{
@@ -82,7 +82,7 @@ const AddMachine = ({Headers}) => {
         getTransmisia()
         const getClients = async()=>{
                const headers = Headers
-            const client_list = await axios.get('http://127.0.0.1:8000//client/', {headers}).
+            const client_list = await axios.get('http://127.0.0.1:8000/api/client/', {headers}).
                 then((response)=>{
                     return response.data.Clients
             }).catch((error)=>{
@@ -93,7 +93,7 @@ const AddMachine = ({Headers}) => {
         getClients()
         const getBridge = async()=>{
                const headers = Headers
-            const bridge_list = await axios.get('http://127.0.0.1:8000//steerablebridge/', {headers}).
+            const bridge_list = await axios.get('http://127.0.0.1:8000/api/steerablebridge/', {headers}).
                 then((response)=>{
                     return response.data.Steerable_bridge
             }).catch((error)=>{
@@ -104,7 +104,7 @@ const AddMachine = ({Headers}) => {
         getBridge()
         const getEngine = async()=>{
                const headers = Headers
-            const engine_list = await axios.get('http://127.0.0.1:8000//engine/', {headers}).
+            const engine_list = await axios.get('http://127.0.0.1:8000/api/engine/', {headers}).
                 then((response)=>{
                     return response.data.Engine
             }).catch((error)=>{

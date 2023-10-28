@@ -22,7 +22,7 @@ const DirectoryLead = () => {
     useEffect(()=>{
         const getLead = async()=>{
 
-        const lead_list = await axios.get(`http://127.0.0.1:8000//lead-detail/${params.title}/`, {headers}).
+        const lead_list = await axios.get(`http://127.0.0.1:8000/api/lead-detail/${params.title}/`, {headers}).
             then((result)=>{
                 console.log(result.data)
                 return result.data
@@ -34,7 +34,7 @@ const DirectoryLead = () => {
     getLead()
          const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
@@ -50,7 +50,7 @@ const DirectoryLead = () => {
             'title': title,
             'descrip': description
         }
-        axios.post(`http://127.0.0.1:8000//lead/add/`, state, {headers}).then((result)=>{
+        axios.post(`http://127.0.0.1:8000/api/lead/add/`, state, {headers}).then((result)=>{
             console.log(result)
              setMessage('Данные в справочник модели ведущего моста успешно добавлены!')
         }).catch((error)=>{setMessage('Упс, что-то пошло не так, повторите попытку.')})
@@ -61,7 +61,7 @@ const DirectoryLead = () => {
               'title': title_1,
             'descrip': description_1
         }
-         const serv = await axios.patch(`http://127.0.0.1:8000//update-lead/${lead[0].id}`, state, {headers}).then((result)=>{
+         const serv = await axios.patch(`http://127.0.0.1:8000/api/update-lead/${lead[0].id}`, state, {headers}).then((result)=>{
              setMessage('Данные в справочнике модели ведущего моста успешно изменены!')
             return  [result.data]
         }).catch((error)=>{

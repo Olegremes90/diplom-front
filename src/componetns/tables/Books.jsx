@@ -24,7 +24,7 @@ const Books = () => {
      useEffect(()=>{
          const getRecovery = async()=>{
 
-        const lead_list = await axios.get(`http://127.0.0.1:8000//recovery/`, {headers}).
+        const lead_list = await axios.get(`http://127.0.0.1:8000/api/recovery/`, {headers}).
             then((result)=>{
                 console.log(result.data)
                 return result.data.Recovery
@@ -36,7 +36,7 @@ const Books = () => {
     getRecovery()
          const getUsel = async()=>{
 
-        const lead_list = await axios.get(`http://127.0.0.1:8000//usel/`, {headers}).
+        const lead_list = await axios.get(`http://127.0.0.1:8000/api/usel/`, {headers}).
             then((result)=>{
                 console.log(result.data)
                 return result.data.Usels
@@ -48,7 +48,7 @@ const Books = () => {
     getUsel()
                  const getVid = async()=>{
 
-        const lead_list = await axios.get(`http://127.0.0.1:8000//vidi/`, {headers}).
+        const lead_list = await axios.get(`http://127.0.0.1:8000/api/vidi/`, {headers}).
             then((result)=>{
                 console.log(result.data)
                 return result.data.Vidi_TO
@@ -60,7 +60,7 @@ const Books = () => {
     getVid()
         const getLead = async()=>{
 
-        const lead_list = await axios.get('http://127.0.0.1:8000//lead/', {headers}).
+        const lead_list = await axios.get('http://127.0.0.1:8000/api/lead/', {headers}).
             then((result)=>{
                 return result.data.Lead
         }).catch((error)=>{
@@ -71,7 +71,7 @@ const Books = () => {
     getLead()
         const getTechnic = async()=>{
 
-            const technic_list = await axios.get('http://127.0.0.1:8000//technica/', {headers}).
+            const technic_list = await axios.get('http://127.0.0.1:8000/api/technica/', {headers}).
                 then((result)=>{
                     console.log( result.data.Technic)
                     return result.data.Technic
@@ -83,7 +83,7 @@ const Books = () => {
         getTechnic()
         const getTransmisia = async()=>{
 
-            const transmisia_list = await axios.get('http://127.0.0.1:8000//transmisia/', {headers}).
+            const transmisia_list = await axios.get('http://127.0.0.1:8000/api/transmisia/', {headers}).
                 then((result)=>{
                     return result.data.Transmisia
             }).catch((error)=>{
@@ -95,7 +95,7 @@ const Books = () => {
 
         const getBridge = async()=>{
 
-            const bridge_list = await axios.get('http://127.0.0.1:8000//steerablebridge/', {headers}).
+            const bridge_list = await axios.get('http://127.0.0.1:8000/api/steerablebridge/', {headers}).
                 then((response)=>{
                     return response.data.Steerable_bridge
             }).catch((error)=>{
@@ -106,7 +106,7 @@ const Books = () => {
         getBridge()
         const getEngine = async()=>{
 
-            const engine_list = await axios.get('http://127.0.0.1:8000//engine/', {headers}).
+            const engine_list = await axios.get('http://127.0.0.1:8000/api/engine/', {headers}).
                 then((response)=>{
                     return response.data.Engine
             }).catch((error)=>{
@@ -117,7 +117,7 @@ const Books = () => {
         getEngine()
           const getService = async()=>{
 
-            const bridge_list = await axios.get(`http://127.0.0.1:8000//service/`, {headers}).
+            const bridge_list = await axios.get(`http://127.0.0.1:8000/api/service/`, {headers}).
                 then((response)=>{
                     return response.data.Service
             }).catch((error)=>{

@@ -16,7 +16,7 @@ const Complaint = (data) => {
             'Accept': 'application/json',
             'Authorization': `Token  ${localStorage.getItem('access_Token')}`
         }
-        const getGroup = await axios.get('http://127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
@@ -39,7 +39,7 @@ const Complaint = (data) => {
                 'Authorization': `Token  ${localStorage.getItem('access_Token')}`
             }
             for (const item of machine.data) {
-                    array.push(await axios.get(`http://127.0.0.1:8000//complaint-filter/${item.id}`, {headers}).then((result) => {
+                    array.push(await axios.get(`http://127.0.0.1:8000/api/complaint-filter/${item.id}`, {headers}).then((result) => {
                         return {'arr': result.data, 'number': item.number}
 
                     }).catch((error)=>{

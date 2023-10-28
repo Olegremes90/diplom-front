@@ -51,7 +51,7 @@ const ApiTest = () => {
 
     const getStudents = async()=>{
           const headers = Headers()
-        const getMachine = await axios.post('http://127.0.0.1:8000//machine-number/', machine, {headers})
+        const getMachine = await axios.post('http://127.0.0.1:8000/api/machine-number/', machine, {headers})
             .then((resp) => {
                 console.log(resp.data.Machine)
             return resp.data
