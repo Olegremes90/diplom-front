@@ -19,7 +19,7 @@ const DirectoryBridge = () => {
     useEffect(() => {
          const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http:/api/127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error

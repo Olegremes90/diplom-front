@@ -61,7 +61,7 @@ const DirectoryRecovery = () => {
               'title': title_1,
             'descrip': description_1
         }
-         const serv = await axios.patch(`http:/api/127.0.0.1:8000/api/update-recovery/${recovery[0].id}`, state, {headers}).then((result)=>{
+         const serv = await axios.patch(`http://127.0.0.1:8000/api/update-recovery/${recovery[0].id}`, state, {headers}).then((result)=>{
             setMessage('В справочнике способы восстановления были успешно изменены данные!')
             return  [result.data]
         }).catch((error)=>{

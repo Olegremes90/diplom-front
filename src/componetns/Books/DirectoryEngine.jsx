@@ -20,7 +20,7 @@ const DirectoryEngine = () => {
     useEffect(()=>{
          const getEngine = async()=>{
 
-            const engine_list = await axios.get(`http:/api/127.0.0.1:8000//engine-detail/${params.title}/`, {headers}).
+            const engine_list = await axios.get(`http://127.0.0.1:8000/api/engine-detail/${params.title}/`, {headers}).
                 then((response)=>{
                     return response.data
             }).catch((error)=>{
@@ -31,7 +31,7 @@ const DirectoryEngine = () => {
         getEngine()
         const getUserGroup = async () => {
 
-        const getGroup = await axios.get('http:/api/127.0.0.1:8000//group/', {headers}).then((response) => {
+        const getGroup = await axios.get('http://127.0.0.1:8000/api/group/', {headers}).then((response) => {
             return response.data
         }).catch((error) => {
             return error
